@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:open": "xed ios",
     "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "clean": "rm -rf node_modules && npm install",
+    "pods": "cd ios && pod install && cd ..",
+    "reset": "watchman watch-del-all && rm -rf node_modules && npm install && cd ios && pod install && cd .. && npm start -- --reset-cache"
   },
   "dependencies": {
     "react": "18.3.1",
